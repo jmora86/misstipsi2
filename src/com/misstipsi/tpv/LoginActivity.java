@@ -5,17 +5,18 @@ import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
-
-
-
 import android.os.AsyncTask;
 import android.os.Bundle;
+import android.os.Vibrator;
 import android.app.Activity;
+import android.content.Context;
+import android.content.Intent;
 import android.text.Editable;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 
 
 public class LoginActivity extends Activity implements OnClickListener{
@@ -117,35 +118,45 @@ public class LoginActivity extends Activity implements OnClickListener{
             	}
             break;
             case R.id.ok:
-            	new FetchSQL().execute();
+            	String codigo = str.toString();
+            	if(codigo !=null)
+            	{
+            		new FetchSQL().execute(codigo);
+            	}else
+            	{	
+            		Vibrator vibrator =(Vibrator) getSystemService(Context.VIBRATOR_SERVICE);
+        	    	vibrator.vibrate(100);
+            		Toast.makeText(getApplicationContext(), "NULL", Toast.LENGTH_SHORT).show();
+            	}
             break;
             
         }
     }
 	
-	 private class FetchSQL extends AsyncTask<Void,Void,String> 
-	    {
+	private class FetchSQL extends AsyncTask<String,Void,String> 
+	{
+		 	String url = "jdbc:postgresql://192.168.1.216:5432/tpvA?user=postgres&password=mainbricks";
+		 	String retval = "";
+		 	String codigo;
 	        @Override
-	        protected String doInBackground(Void... params) {
-	            String retval = "";
+	        protected String doInBackground(String... params) {
+	        	
+	        	codigo = params[0];
+	            
 	            try {
 	                Class.forName("org.postgresql.Driver");
 	            } catch (ClassNotFoundException e) {
 	                e.printStackTrace();
 	                retval = e.toString();
 	            }
-	            String url = "jdbc:postgresql://192.168.1.216:5432/tpvA?user=postgres&password=mainbricks"; 
-	            //String url = "jdbc:postgresql://10.0.2.2/tpvA?user=postgres&password=postgres";
-	            //String url = "jdbc:postgresql://10.0.2.2/postgres?user=postgres&password=postgres";
-	           
-	            
+	             
 	            Connection conn;
-	            try {
-	                //DriverManager.setLoginTimeout(5);
+	            try 
+	            {
 	                conn = DriverManager.getConnection(url);
 	                Statement st = conn.createStatement();
 	                String sql;
-	                sql = "SELECT version()";
+	                sql = "SELECT 1";
 	                ResultSet rs = st.executeQuery(sql);
 	                while(rs.next()) {
 	                    retval = rs.getString(1);
@@ -160,9 +171,14 @@ public class LoginActivity extends Activity implements OnClickListener{
 	            return retval;
 	        }
 	        @Override
-	        protected void onPostExecute(String value) {
-	        	disp.setText(value);
+	        protected void onPostExecute(String value) 
+	        {
+	        	if(value != null)
+	        	{
+	        		Intent modulo=new Intent(getApplicationContext(), ModulsActivity.class);
+	        		startActivity(modulo);
+	        	}
 	        }
-	    }
+	}
 	
 }

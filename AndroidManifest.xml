@@ -25,6 +25,12 @@
 				<category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity
+            android:name="com.misstipsi.tpv.ModulsActivity"
+            android:label="Moduls"
+            android:theme="@android:style/Theme.NoTitleBar.Fullscreen"
+            android:screenOrientation="landscape">
+       </activity>
     </application>
 
 </manifest>
