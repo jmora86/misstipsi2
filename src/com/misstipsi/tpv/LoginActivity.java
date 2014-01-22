@@ -5,6 +5,13 @@ import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+
+import org.json.JSONException;
+import org.json.JSONObject;
+
+import com.misstipsi.library.UserFunctions;
+
+
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.os.Vibrator;
@@ -16,6 +23,7 @@ import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.LinearLayout;
 import android.widget.Toast;
 
 
@@ -24,6 +32,10 @@ public class LoginActivity extends Activity implements OnClickListener{
 	Button zero,one, two, three, four, five, six, seven, eight, nine,ok, delete;
 	EditText disp;
 	String optr;
+	UserFunctions userFunction;
+	LinearLayout linear_error;
+	public static final int cod_user = 1111;
+	int logstatus=-1;
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -45,6 +57,7 @@ public class LoginActivity extends Activity implements OnClickListener{
         delete 	= (Button) findViewById(R.id.delete);
         
         disp = (EditText) findViewById(R.id.cajaTextLogin);
+        linear_error=(LinearLayout)findViewById(R.id.liner_sms_error);
 
         try
         {
@@ -119,66 +132,65 @@ public class LoginActivity extends Activity implements OnClickListener{
             break;
             case R.id.ok:
             	String codigo = str.toString();
-            	if(codigo !=null)
-            	{
-            		new FetchSQL().execute(codigo);
-            	}else
-            	{	
-            		Vibrator vibrator =(Vibrator) getSystemService(Context.VIBRATOR_SERVICE);
-        	    	vibrator.vibrate(100);
-            		Toast.makeText(getApplicationContext(), "NULL", Toast.LENGTH_SHORT).show();
-            	}
+            	new FetchSQL().execute(codigo);
+            
             break;
             
         }
     }
 	
-	private class FetchSQL extends AsyncTask<String,Void,String> 
+	private class FetchSQL extends AsyncTask<String,Void,Boolean> 
 	{
-		 	String url = "jdbc:postgresql://192.168.1.216:5432/tpvA?user=postgres&password=mainbricks";
-		 	String retval = "";
-		 	String codigo;
+			String usuario;
+			Boolean resultado;
+				
+		
 	        @Override
-	        protected String doInBackground(String... params) {
+	        protected Boolean doInBackground(String... params) {
 	        	
-	        	codigo = params[0];
+	        	usuario = params[0];
+	        	userFunction = new UserFunctions();
+				JSONObject json = userFunction.loginUser(usuario);
+				
 	            
-	            try {
-	                Class.forName("org.postgresql.Driver");
-	            } catch (ClassNotFoundException e) {
-	                e.printStackTrace();
-	                retval = e.toString();
-	            }
-	             
-	            Connection conn;
-	            try 
-	            {
-	                conn = DriverManager.getConnection(url);
-	                Statement st = conn.createStatement();
-	                String sql;
-	                sql = "SELECT 1";
-	                ResultSet rs = st.executeQuery(sql);
-	                while(rs.next()) {
-	                    retval = rs.getString(1);
-	                }
-	                rs.close();
-	                st.close();
-	                conn.close();
-	            } catch (SQLException e) {
-	                e.printStackTrace();
-	                retval = e.toString();
-	            }
-	            return retval;
+				try 
+				{	
+					logstatus=json.getInt("logstatus");
+					
+					if(logstatus==1)
+					{
+						resultado = true;
+						
+					}else
+					{
+						resultado = false;
+					}
+					 
+				} catch (JSONException e) 
+				{
+					e.printStackTrace();
+				}
+				return resultado;
+				
+				
 	        }
 	        @Override
-	        protected void onPostExecute(String value) 
+	        protected void onPostExecute(Boolean value) 
 	        {
-	        	if(value != null)
-	        	{
+	        	
+	        	if(value)
+				{
 	        		Intent modulo=new Intent(getApplicationContext(), ModulsActivity.class);
 	        		startActivity(modulo);
-	        	}
-	        }
+					
+				}else
+				{
+					linear_error.setVisibility(View.VISIBLE);
+					
+				}
+	        	
+	        	
+	       }
 	}
 	
 }
