@@ -1,22 +1,11 @@
 package com.misstipsi.tpv;
 
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.ResultSet;
-import java.sql.SQLException;
-import java.sql.Statement;
-
 import org.json.JSONException;
 import org.json.JSONObject;
-
 import com.misstipsi.library.UserFunctions;
-
-
 import android.os.AsyncTask;
 import android.os.Bundle;
-import android.os.Vibrator;
 import android.app.Activity;
-import android.content.Context;
 import android.content.Intent;
 import android.text.Editable;
 import android.view.View;
@@ -24,7 +13,6 @@ import android.view.View.OnClickListener;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.LinearLayout;
-import android.widget.Toast;
 
 
 public class LoginActivity extends Activity implements OnClickListener{
@@ -58,7 +46,7 @@ public class LoginActivity extends Activity implements OnClickListener{
         
         disp = (EditText) findViewById(R.id.cajaTextLogin);
         linear_error=(LinearLayout)findViewById(R.id.liner_sms_error);
-
+        
         try
         {
             one.setOnClickListener(this);
@@ -133,7 +121,6 @@ public class LoginActivity extends Activity implements OnClickListener{
             case R.id.ok:
             	String codigo = str.toString();
             	new FetchSQL().execute(codigo);
-            
             break;
             
         }
@@ -144,16 +131,14 @@ public class LoginActivity extends Activity implements OnClickListener{
 			String usuario;
 			Boolean resultado;
 				
-		
-	        @Override
+			@Override
 	        protected Boolean doInBackground(String... params) {
 	        	
 	        	usuario = params[0];
 	        	userFunction = new UserFunctions();
 				JSONObject json = userFunction.loginUser(usuario);
 				
-	            
-				try 
+	            try 
 				{	
 					logstatus=json.getInt("logstatus");
 					
@@ -177,19 +162,16 @@ public class LoginActivity extends Activity implements OnClickListener{
 	        @Override
 	        protected void onPostExecute(Boolean value) 
 	        {
-	        	
 	        	if(value)
 				{
-	        		Intent modulo=new Intent(getApplicationContext(), ModulsActivity.class);
-	        		startActivity(modulo);
+	        		Intent go_plans=new Intent(getApplicationContext(),PlansActivity.class);
+	        		startActivity(go_plans);
 					
 				}else
 				{
 					linear_error.setVisibility(View.VISIBLE);
 					
 				}
-	        	
-	        	
 	       }
 	}
 	

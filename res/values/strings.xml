@@ -16,9 +16,14 @@
     <string name="eight">8</string>
     <string name="nine">9</string>
     <string name="ok">OK</string>
-    <string name="sup">SUP</string>
+    
+
    
 	<!-- Login-->
-    <string name="cod_incorrect">¡Ups!... Código error.</string>
+    <string name="sms_incorrect">¡Ups!...\n El código que has \n introducido \n es erróneo.</string>
+    <!-- Plans-->
+    <string name="reserve">Reservas</string>
+    <string name="new_service">Nuevo Servicio</string>
+    <string name="options">Opciones</string>
     
 </resources>

@@ -14,6 +14,9 @@ public final class R {
         public static final int aqua=0x7f040009;
         public static final int black=0x7f04000f;
         public static final int blue=0x7f04000d;
+        /**  Colores TPV 
+         */
+        public static final int blue_TPV=0x7f040010;
         public static final int fuchsia=0x7f040002;
         public static final int gray=0x7f040005;
         public static final int green=0x7f04000c;
@@ -23,6 +26,7 @@ public final class R {
         public static final int olive=0x7f040006;
         public static final int purple=0x7f040007;
         public static final int red=0x7f040003;
+        public static final int red_TPV=0x7f040011;
         public static final int silver=0x7f040004;
         public static final int teal=0x7f04000b;
         public static final int white=0x7f040000;
@@ -42,35 +46,49 @@ public final class R {
         public static final int background=0x7f020000;
         public static final int background_calc=0x7f020001;
         public static final int button_calc=0x7f020002;
-        public static final int delete_calc=0x7f020003;
-        public static final int ic_launcher=0x7f020004;
-        public static final int logo_background=0x7f020005;
-        public static final int teclado_login=0x7f020006;
+        public static final int button_date=0x7f020003;
+        public static final int button_new_service=0x7f020004;
+        public static final int button_oclock=0x7f020005;
+        public static final int button_reserve=0x7f020006;
+        public static final int delete_calc=0x7f020007;
+        public static final int ic_launcher=0x7f020008;
+        public static final int logo_background=0x7f020009;
+        public static final int logo_error=0x7f02000a;
+        public static final int out_session=0x7f02000b;
+        public static final int sandwich_error=0x7f02000c;
+        public static final int teclado_login=0x7f02000d;
     }
     public static final class id {
-        public static final int action_settings=0x7f090011;
-        public static final int cajaTextLogin=0x7f090003;
-        public static final int commentsIncorrect=0x7f090002;
-        public static final int delete=0x7f09000f;
-        public static final int eight=0x7f09000b;
-        public static final int five=0x7f090008;
-        public static final int four=0x7f090007;
-        public static final int imageView1=0x7f090010;
-        public static final int liner_sms_error=0x7f090000;
-        public static final int logo_error=0x7f090001;
-        public static final int nine=0x7f09000c;
-        public static final int ok=0x7f09000d;
-        public static final int one=0x7f090004;
-        public static final int seven=0x7f09000a;
-        public static final int six=0x7f090009;
-        public static final int three=0x7f090006;
-        public static final int two=0x7f090005;
-        public static final int zero=0x7f09000e;
+        public static final int action_settings=0x7f090019;
+        public static final int button_date=0x7f090012;
+        public static final int button_new_service=0x7f090017;
+        public static final int button_options=0x7f090018;
+        public static final int button_reserve=0x7f090016;
+        public static final int cajaTextLogin=0x7f090000;
+        public static final int delete=0x7f090010;
+        public static final int digitalClock=0x7f090015;
+        public static final int eight=0x7f09000c;
+        public static final int five=0x7f090009;
+        public static final int four=0x7f090008;
+        public static final int liner_sms_error=0x7f090001;
+        public static final int logo_error=0x7f090002;
+        public static final int nine=0x7f09000d;
+        public static final int ok=0x7f09000e;
+        public static final int one=0x7f090005;
+        public static final int out_session=0x7f090011;
+        public static final int sandwich_error=0x7f090003;
+        public static final int seven=0x7f09000b;
+        public static final int six=0x7f09000a;
+        public static final int sms_error=0x7f090004;
+        public static final int text_day=0x7f090013;
+        public static final int text_month=0x7f090014;
+        public static final int three=0x7f090007;
+        public static final int two=0x7f090006;
+        public static final int zero=0x7f09000f;
     }
     public static final class layout {
         public static final int login=0x7f030000;
-        public static final int login_old=0x7f030001;
-        public static final int moduls=0x7f030002;
+        public static final int moduls=0x7f030001;
     }
     public static final class menu {
         public static final int home=0x7f080000;
@@ -78,18 +96,22 @@ public final class R {
     public static final class string {
         public static final int action_settings=0x7f060001;
         public static final int app_name=0x7f060000;
-        /**  Login
-         */
-        public static final int cod_incorrect=0x7f06000e;
         public static final int eight=0x7f06000a;
         public static final int five=0x7f060007;
         public static final int four=0x7f060006;
+        public static final int new_service=0x7f06000f;
         public static final int nine=0x7f06000b;
         public static final int ok=0x7f06000c;
         public static final int one=0x7f060003;
+        public static final int options=0x7f060010;
+        /**  Plans
+         */
+        public static final int reserve=0x7f06000e;
         public static final int seven=0x7f060009;
         public static final int six=0x7f060008;
-        public static final int sup=0x7f06000d;
+        /**  Login
+         */
+        public static final int sms_incorrect=0x7f06000d;
         public static final int three=0x7f060005;
         public static final int two=0x7f060004;
         /**  Números Calculadora

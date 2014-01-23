@@ -16,4 +16,9 @@
  <color name="blue">#0000FF</color>
  <color name="navy">#000080</color>
  <color name="black">#000000</color>
+ 
+ <!-- Colores TPV -->
+ <color name="blue_TPV">#000066</color>
+ <color name="red_TPV">#a50000</color>
+ 
 </resources>

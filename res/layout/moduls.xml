@@ -4,6 +4,194 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:background="@drawable/background" >
-    
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="0.9"
+        android:orientation="horizontal" >
+    </LinearLayout>
+	<LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="0.83"
+        android:orientation="horizontal" >
+        
+	    <LinearLayout
+	        android:layout_width="match_parent"
+	        android:layout_height="match_parent"
+	        android:layout_weight="1.2"
+	        android:orientation="horizontal"
+	        android:gravity="center">
+	        
+	       			<LinearLayout
+			        android:layout_width="match_parent"
+			        android:layout_height="match_parent"
+			        android:layout_weight="1.8"
+			        android:orientation="horizontal"
+			        android:gravity="center|right" >
+			        
+	       			     <Button
+		       			 android:layout_width="wrap_content"
+		       			 android:layout_height="wrap_content"
+		       			 android:id = "@+id/out_session"
+		       			 android:background="@drawable/out_session"/>
+	       			     
+		    		</LinearLayout>
+		    		<LinearLayout
+			        android:layout_width="match_parent"
+			        android:layout_height="match_parent"
+			        android:layout_weight="1.8"
+			        android:orientation="horizontal"
+			        android:gravity="center"  >
 
+		    			<RelativeLayout
+		    			    android:layout_width="match_parent"
+		    			    android:layout_height="match_parent"
+		    			    android:gravity="center" >
+		    			    
+		    			    <ImageView
+		    			    android:id = "@+id/button_date"    
+							android:layout_width="wrap_content"
+							android:layout_height="wrap_content"
+							android:src="@drawable/button_date"
+							android:layout_alignParentTop="true"/>
+		    			    
+		    			    <TextView
+				            android:id="@+id/text_day"
+				            android:layout_width="match_parent"
+				            android:layout_height="wrap_content" 
+				            android:textSize="12sp"
+				            android:textStyle="bold"
+				            android:layout_alignLeft="@id/button_date"
+				            android:layout_alignTop="@id/button_date"
+				            android:layout_alignRight="@id/button_date"
+				            android:layout_alignBottom="@id/button_date"
+				            android:gravity="center|top"
+				            android:textColor="@color/blue_TPV"/>
+		    			    
+		    			    <TextView
+				            android:id="@+id/text_month"
+				            android:layout_width="match_parent"
+				            android:layout_height="wrap_content" 
+				            android:textSize="12sp"
+				            android:textStyle="bold"
+				            android:layout_alignLeft="@id/button_date"
+				            android:layout_alignTop="@id/button_date"
+				            android:layout_alignRight="@id/button_date"
+				            android:layout_alignBottom="@id/button_date"
+				            android:gravity="center|bottom"
+				            android:textColor="@color/blue_TPV"/>
+		    			    
+		    			</RelativeLayout>
+	       			     
+		    		</LinearLayout>
+		    		<LinearLayout
+			        android:layout_width="match_parent"
+			        android:layout_height="match_parent"
+			        android:layout_weight="1.2"
+			        android:orientation="horizontal"
+			        android:gravity="center|left" >
+	       			     
+		    		     <TextClock
+					     android:id="@+id/digitalClock"
+					     android:layout_width="wrap_content"
+					     android:layout_height="wrap_content"
+					     android:gravity="center"
+					     android:textSize="20sp"
+					     android:textColor="@color/blue_TPV"
+					     android:background="@drawable/button_oclock" />
+		    		    
+		    		</LinearLayout>
+	         
+	    </LinearLayout>
+    	<LinearLayout
+	        android:layout_width="match_parent"
+	        android:layout_height="match_parent"
+	        android:layout_weight="0.7"
+	        android:orientation="horizontal"
+	        android:gravity="center">
+    	</LinearLayout>
+    	<LinearLayout
+	        android:layout_width="match_parent"
+	        android:layout_height="match_parent"
+	        android:layout_weight="1.2"
+	        android:orientation="horizontal"
+	        android:gravity="center" >
+		    		
+    	    
+	    	    <LinearLayout
+		        android:layout_width="match_parent"
+		        android:layout_height="match_parent"
+		        android:layout_weight="1.2"
+		        android:orientation="horizontal"
+		        android:gravity="center" >
+		    		    
+	    	        <Button
+	    	        android:id = "@+id/button_reserve"
+				    android:layout_width="wrap_content"
+				    android:layout_height="wrap_content"
+				    android:background="@drawable/button_reserve"
+				    android:textColor="@color/blue_TPV"
+				    android:text="@string/reserve"/>
+	    	        
+	    	        
+	    		</LinearLayout>
+	    		<LinearLayout
+		        android:layout_width="match_parent"
+		        android:layout_height="match_parent"
+		        android:layout_weight="1"
+		        android:orientation="horizontal"
+		        android:gravity="center" >
+	    	        
+	    		    <Button
+	    		    android:id = "@+id/button_new_service"    
+				    android:layout_width="wrap_content"
+				    android:layout_height="wrap_content"
+				    android:background="@drawable/button_new_service"
+				    android:textColor="@color/blue_TPV"
+				    android:text="@string/new_service"/>
+	    		    
+	    		</LinearLayout>
+	    		<LinearLayout
+		        android:layout_width="match_parent"
+		        android:layout_height="match_parent"
+		        android:layout_weight="1.2"
+		        android:orientation="horizontal"
+		        android:gravity="center">
+	    		    
+	    		    <Button
+	    		    android:id = "@+id/button_options"
+				    android:layout_width="wrap_content"
+				    android:layout_height="wrap_content"
+				    android:background="@drawable/button_reserve"
+				    android:textColor="@color/blue_TPV"
+				    android:text="@string/options"/>
+	    		    
+	    		</LinearLayout>
+	    		<LinearLayout
+		        android:layout_width="match_parent"
+		        android:layout_height="match_parent"
+		        android:layout_weight="1.5"
+		        android:orientation="horizontal"
+		        android:gravity="center" >
+	    		</LinearLayout>
+    	    
+    	</LinearLayout>
+    	
+	    
+	</LinearLayout>
+	 <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="0.22"
+        android:orientation="horizontal" >
+    </LinearLayout>
+	<LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="0.85"
+        android:orientation="horizontal" >
+	</LinearLayout>
+	
+    
 </LinearLayout>

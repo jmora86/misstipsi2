@@ -25,7 +25,7 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_weight="0.50"
+                android:layout_weight="0.72"
                 android:orientation="vertical" >
             
                  <LinearLayout
@@ -36,12 +36,10 @@
 				 </LinearLayout>
 
 	           	 <LinearLayout
-	           	     android:id="@+id/liner_sms_error"
 	           	     android:layout_width="match_parent"
 	           	     android:layout_height="match_parent"
 	           	     android:layout_weight="0.25"
-	           	     android:orientation="horizontal"
-	           	     android:visibility="invisible" >
+	           	     android:orientation="horizontal">
                  
 	           	      <LinearLayout
            	          android:layout_width="match_parent"
@@ -53,21 +51,16 @@
 		                  android:layout_width="match_parent"
 		                  android:layout_height="match_parent"
 		                  android:layout_weight="0.125"
-		                  android:orientation="horizontal" >
+		                  android:orientation="horizontal"
+		                   >
 					  	  </LinearLayout>
 					  	  <LinearLayout
 		                  android:layout_width="match_parent"
 		                  android:layout_height="match_parent"
 		                  android:layout_weight="0.125"
-		                  android:orientation="horizontal" android:gravity="right" >
-		                  
-					  	      <ImageView
-                     		  android:id="@+id/logo_error"
-                     		  android:layout_width="wrap_content"
-                              android:layout_height="wrap_content"
-                              android:src="@drawable/logo_background" />
-					  	      
-					  	  </LinearLayout>
+		                  android:orientation="horizontal" 
+		                  android:gravity="right" >
+		                  </LinearLayout>
 	           	          
 					  </LinearLayout>
 
@@ -77,18 +70,6 @@
 				      android:layout_weight="0.25"
 				      android:orientation="horizontal" 
 				      android:gravity="center">
-					  	  
-					      <TextView
-					      android:id="@+id/commentsIncorrect"
-					      android:layout_width="wrap_content"
-					      android:layout_height="wrap_content"
-					      android:text="@string/cod_incorrect"
-					      android:textSize="28sp"
-					      android:textStyle="bold"
-					      android:textColor="#000066"
-					      android:typeface="sans"
-					      android:gravity="center" />
-
 					  </LinearLayout>
 	           	     
 				 </LinearLayout>	
@@ -99,20 +80,20 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_weight="0.50"
+                android:layout_weight="0.3"
                 android:gravity="right"
-                android:orientation="vertical" >
+                android:orientation="vertical">
             
                 <LinearLayout
 	            android:layout_width="match_parent"
 	            android:layout_height="match_parent"
-	            android:layout_weight="0.35"
+	            android:layout_weight="0.67"
 	            android:orientation="horizontal" >
 	            
                      <LinearLayout
                          android:layout_width="match_parent"
                          android:layout_height="match_parent"
-                         android:layout_weight="0.09"
+                         android:layout_weight="0.12"
                          android:orientation="horizontal" >
 
 	           		</LinearLayout>
@@ -132,6 +113,7 @@
 	           		    android:gravity="center"
 	           		    android:focusable="false"
 	           		    android:hint=""
+	           		    android:textSize="35sp"
 	           		    android:maxLength="10"
 	           		    android:textColor="#000066" >
 						</EditText>
@@ -139,11 +121,113 @@
 	           		</LinearLayout>
 	            
                 </LinearLayout>
+
 	            <LinearLayout
+	            android:id="@+id/liner_sms_error"  
 	            android:layout_width="match_parent"
-	            android:layout_height="match_parent"
-	            android:layout_weight="0.15"
-	            android:orientation="horizontal" >
+                android:layout_height="match_parent"
+                android:layout_weight="0.15"
+                android:orientation="horizontal"
+                android:visibility="invisible" >
+	           		
+                	<LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="0.05"
+                    android:orientation="vertical" >
+           		    
+	                    <LinearLayout
+			            android:layout_width="match_parent"
+			            android:layout_height="match_parent"
+			            android:layout_weight="0.5"
+			            android:orientation="horizontal" >
+			            </LinearLayout>
+			            <LinearLayout
+			            android:layout_width="match_parent"
+			            android:layout_height="match_parent"
+			            android:layout_weight="0.1"
+			            android:orientation="horizontal"
+			            android:gravity="right" >
+			            
+			                <ImageView
+		                    android:id="@+id/logo_error"
+		                    android:layout_width="wrap_content"
+		                    android:layout_height="wrap_content"
+		                    android:src="@drawable/logo_error" />
+			                
+			            </LinearLayout>
+	                </LinearLayout>
+		            <LinearLayout
+		            android:layout_width="match_parent"
+		            android:layout_height="match_parent"
+		            android:layout_weight="0.075"
+		            android:orientation="horizontal" >
+	           		    
+	                	
+	                	<LinearLayout
+			            android:layout_width="match_parent"
+			            android:layout_height="match_parent"
+			            android:layout_weight="1.7"
+			            android:orientation="horizontal" >
+			            </LinearLayout>
+
+	                	<LinearLayout
+	                	    android:layout_width="match_parent"
+	                	    android:layout_height="match_parent"
+	                	    android:layout_weight="0.1"
+	                	    android:orientation="vertical" >
+			                
+	                	    <LinearLayout
+				            android:layout_width="match_parent"
+				            android:layout_height="match_parent"
+				            android:layout_weight="4"
+				            android:orientation="horizontal" >
+			            	</LinearLayout>
+			            	<LinearLayout
+				            android:layout_width="match_parent"
+				            android:layout_height="match_parent"
+				            android:layout_weight="0.3"
+				            android:orientation="horizontal" >
+				            
+				            	<RelativeLayout
+			    			    android:layout_width="match_parent"
+			    			    android:layout_height="match_parent"
+			    			    android:gravity="left" >
+				    			    
+				    			   <ImageView
+			                        android:id="@+id/sandwich_error"
+			                        android:layout_width="wrap_content"
+			                        android:layout_height="wrap_content"
+			                        android:src="@drawable/sandwich_error" />
+				    			    
+				    			    <TextView
+						            android:id="@+id/sms_error"
+						            android:layout_width="match_parent"
+						            android:layout_height="wrap_content" 
+						            android:textSize="12sp"
+						            android:textStyle="bold"
+						            android:layout_alignLeft="@id/sandwich_error"
+						            android:layout_alignTop="@id/sandwich_error"
+						            android:layout_alignRight="@id/sandwich_error"
+						            android:layout_alignBottom="@id/sandwich_error"
+						            android:gravity="center"
+						            android:text="@string/sms_incorrect"
+						            android:textColor="@color/blue_TPV"/>
+				    			    
+				    			    
+				    			    
+				    			</RelativeLayout>
+			            	    
+			            	   
+			            	    
+				            </LinearLayout>
+			            
+	                	   
+	                	    
+			            </LinearLayout>
+			            
+	            	</LinearLayout>
+	                
 	            </LinearLayout>
 	             
             </LinearLayout>
@@ -153,28 +237,28 @@
        <LinearLayout
            android:layout_width="0dp"
            android:layout_height="match_parent"
-           android:layout_weight="0.40"
+           android:layout_weight="0.5"
            android:orientation="vertical" >
             
            <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_weight="0.14"
+            android:layout_weight="0.155"
             android:orientation="horizontal" >
             </LinearLayout>
             
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_weight="0.15"
+                android:layout_weight="0.10"
                 android:gravity="center"
                 android:orientation="horizontal" >
                 	
 	            <LinearLayout
 	                android:layout_width="match_parent"
 	                android:layout_height="match_parent"
-	                android:layout_weight="0.070"
-	                android:orientation="horizontal" >
+	                android:layout_weight="0.13"
+	                android:orientation="horizontal">
 
 	            </LinearLayout>
 
@@ -183,7 +267,9 @@
                 android:layout_height="match_parent"
                 android:layout_weight="0.065"
                 android:orientation="vertical"
-                android:background="@drawable/background_calc" >
+                android:background="@drawable/background_calc"
+                >
+               
 	           		
 	                <LinearLayout
 		            android:layout_width="match_parent"
@@ -205,6 +291,7 @@
 							        android:id = "@+id/one"
 							        android:text="@string/one"
 							        android:textColor="#000066"
+							        android:textSize="35sp"
 							        android:background="@drawable/button_calc"/>
 	           		    
 	                    	</LinearLayout>
@@ -222,6 +309,7 @@
 						        android:layout_gravity="center"
 						        android:background="@drawable/button_calc"
 						        android:text="@string/two"
+						        android:textSize="35sp"
 						        android:textColor="#000066" />
 	           		    
 	                    	</LinearLayout>
@@ -238,6 +326,7 @@
 						        android:id = "@+id/three"
 						        android:text="@string/three" 
 						        android:textColor="#000066"
+						        android:textSize="35sp"
 						        android:background="@drawable/button_calc"/>
 	           		    
 	                    	</LinearLayout>
@@ -264,6 +353,7 @@
 						        android:id = "@+id/four"
 						        android:text="@string/four" 
 						        android:textColor="#000066"
+						        android:textSize="35sp"
 						        android:background="@drawable/button_calc"/>
 	           		    
 	                    </LinearLayout>
@@ -280,6 +370,7 @@
 						        android:id = "@+id/five"
 						        android:text="@string/five" 
 						        android:textColor="#000066"
+						        android:textSize="35sp"
 						        android:background="@drawable/button_calc"/>
 					    
 	           		    
@@ -297,6 +388,7 @@
 						        android:id = "@+id/six"
 						        android:text="@string/six" 
 						        android:textColor="#000066"
+						        android:textSize="35sp"
 						        android:background="@drawable/button_calc"/>
 	           		    
 	                    </LinearLayout>
@@ -323,6 +415,7 @@
 						        android:id = "@+id/seven"
 						        android:text="@string/seven" 
 						        android:textColor="#000066"
+						        android:textSize="35sp"
 								android:background="@drawable/button_calc"/>
 	           		    
 	                    </LinearLayout>
@@ -341,6 +434,7 @@
 						       android:id = "@+id/eight"
 						       android:text="@string/eight" 
 						       android:textColor="#000066"
+						       android:textSize="35sp"
 						       android:background="@drawable/button_calc"/>
 	           		    
 	                    </LinearLayout>
@@ -358,6 +452,7 @@
 						       android:id = "@+id/nine"
 						       android:text="@string/nine"
 						       android:textColor="#000066"
+						       android:textSize="35sp"
 						       android:background="@drawable/button_calc"/>
 	           		    
 	                    </LinearLayout>
@@ -383,7 +478,8 @@
 						       android:layout_height="wrap_content"
 						       android:id = "@+id/ok"
 						       android:text="@string/ok"
-							   android:textColor="#A80000"
+							   android:textColor="@color/red_TPV"
+							   android:textSize="35sp"
 							   android:background="@drawable/button_calc"/>
 	           		    
 	                    </LinearLayout>
@@ -401,6 +497,7 @@
 						       android:id = "@+id/zero"
 						       android:text="@string/zero"
 						       android:textColor="#000066"
+						       android:textSize="35sp"
 						       android:background="@drawable/button_calc"/>
 	           		    
 	                    </LinearLayout>
@@ -427,8 +524,8 @@
 	            <LinearLayout
 	                android:layout_width="match_parent"
 	                android:layout_height="match_parent"
-	                android:layout_weight="0.07"
-	                android:orientation="horizontal" >
+	                android:layout_weight="0.083"
+	                android:orientation="horizontal">
 
 	            </LinearLayout>
                 
@@ -448,11 +545,11 @@
             android:orientation="horizontal"
             android:gravity="right" >
 
-                 <ImageView
+                <!--   <ImageView
                      android:id="@+id/imageView1"
                      android:layout_width="wrap_content"
                      android:layout_height="wrap_content"
-                     android:src="@drawable/logo_background" />
+                     android:src="@drawable/logo_background" />-->
 
             </LinearLayout>
             <LinearLayout
